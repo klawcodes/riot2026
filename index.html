@@ -3,7 +3,43 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary Meta Tags -->
     <title>Muhammad Dimas — RIOT REVENGER</title>
+    <meta name="title" content="Muhammad Dimas — RIOT REVENGER" />
+    <meta
+      name="description"
+      content="Designing, building & creating things since 2016. Developer and graphic designer based in Bekasi, Indonesia."
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Muhammad Dimas — RIOT REVENGER" />
+    <meta
+      property="og:description"
+      content="Designing, building & creating things since 2016. Developer and graphic designer based in Bekasi, Indonesia."
+    />
+    <meta property="og:image" content="picture.png" />
+    <meta property="og:url" content="https://riotrevenger.xyz" />
+    <meta property="og:site_name" content="RIOT REVENGER" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Muhammad Dimas — RIOT REVENGER" />
+    <meta
+      name="twitter:description"
+      content="Designing, building & creating things since 2016. Developer and graphic designer based in Bekasi, Indonesia."
+    />
+    <meta name="twitter:image" content="picture.png" />
+    <meta name="twitter:site" content="@riotrevenger" />
+    <meta name="twitter:creator" content="@riotrevenger" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="picture.png" type="image/png" />
+    <link rel="apple-touch-icon" href="picture.png" />
+
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&display=swap");
 
@@ -46,96 +82,81 @@
       .page {
         max-width: 640px;
         margin: 0 auto;
-        padding: 56px 24px 40px;
+        padding: 40px 24px 32px;
       }
 
-      /* ---------- HEADER ---------- */
+      /* ---------- PROFILE (compact) ---------- */
       .profile {
         display: flex;
-        align-items: flex-start;
-        gap: 16px;
-        margin-bottom: 48px;
-      }
-
-      .avatar {
-        width: 76px;
-        height: 76px;
-        border-radius: 50%;
-        flex: none;
-        position: relative;
-        overflow: hidden;
-        background: linear-gradient(
-          100deg,
-          #1c1c1e 30%,
-          #2a2a2d 50%,
-          #1c1c1e 70%
-        );
-        background-size: 200% 100%;
-        animation: shimmer 2.2s infinite;
-        display: flex;
         align-items: center;
-        justify-content: center;
-      }
-      .avatar svg {
-        width: 30px;
-        height: 30px;
-        opacity: 0.3;
+        gap: 14px;
+        margin-bottom: 32px;
       }
 
-      @keyframes shimmer {
-        0% {
-          background-position: 200% 0;
-        }
-        100% {
-          background-position: -200% 0;
-        }
+      .profile__avatar {
+        flex: none;
+        width: 88px;
+        height: 88px;
+        border-radius: 14px;
+        overflow: hidden;
+        background: #1c1c1e;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+      }
+      .profile__avatar img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
       }
 
       .profile__info {
-        padding-top: 2px;
+        padding-top: 0;
+        flex: 1;
+        min-width: 0;
       }
 
       .profile__name-row {
         display: flex;
         align-items: center;
-        gap: 8px;
+        gap: 6px;
         flex-wrap: wrap;
       }
       .profile__name {
-        font-size: 26px;
+        font-size: 24px;
         font-weight: 800;
+        letter-spacing: -0.01em;
       }
       .profile__handle {
-        font-size: 15px;
+        font-size: 14px;
         color: var(--text-dim);
         background: var(--handle-bg);
-        padding: 3px 10px;
+        padding: 2px 10px;
         border-radius: 6px;
       }
       .profile__bio {
-        margin-top: 8px;
+        margin-top: 4px;
         color: var(--text-dim);
-        font-size: 16px;
-        line-height: 1.45;
+        font-size: 15px;
+        line-height: 1.4;
       }
 
       .profile__links {
-        margin-top: 10px;
+        margin-top: 6px;
         display: flex;
         align-items: center;
         gap: 6px;
         flex-wrap: wrap;
-        font-size: 15px;
+        font-size: 14px;
       }
       .profile__links a {
         display: inline-flex;
         align-items: center;
-        gap: 5px;
+        gap: 4px;
         color: var(--blue-light);
       }
       .profile__links svg {
-        width: 16px;
-        height: 16px;
+        width: 14px;
+        height: 14px;
       }
       .profile__links .dot {
         color: var(--text-dim);
@@ -145,7 +166,7 @@
       .thread {
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: 8px;
       }
 
       .msg {
@@ -207,7 +228,7 @@
         border-bottom-right-radius: 5px;
       }
 
-      /* attachments inside a bubble (chips / icons appended after text) */
+      /* attachments inside a bubble */
       .bubble .chips {
         margin-top: 8px;
         display: flex;
@@ -217,26 +238,6 @@
       .bubble .chips span {
         font-size: 12.5px;
         color: var(--blue-light);
-      }
-      .bubble .icons {
-        margin-top: 8px;
-        display: flex;
-        gap: 8px;
-      }
-      .icon-badge {
-        width: 26px;
-        height: 26px;
-        border-radius: 50%;
-        background: #1c1c1e;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex: none;
-      }
-      .icon-badge svg {
-        width: 13px;
-        height: 13px;
-        stroke: var(--text);
       }
 
       /* typing indicator */
@@ -298,10 +299,11 @@
         }
       }
 
-      /* project cards row (attach block, separate from bubble) */
+      /* ---------- PROJECT CARDS (with images) ---------- */
       .attach {
         display: flex;
         justify-content: flex-end;
+        width: 100%;
         opacity: 0;
         transform: translateY(20px);
       }
@@ -323,7 +325,6 @@
         -webkit-backdrop-filter: blur(18px) saturate(160%);
         border: 1px solid rgba(255, 255, 255, 0.08);
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
-        position: relative;
         transition:
           transform 0.25s ease,
           z-index 0.25s ease;
@@ -337,23 +338,18 @@
       }
       .proj-card__thumb {
         height: 96px;
-        background: linear-gradient(
-          100deg,
-          rgba(255, 255, 255, 0.06) 30%,
-          rgba(255, 255, 255, 0.12) 50%,
-          rgba(255, 255, 255, 0.06) 70%
-        );
-        background-size: 200% 100%;
-        animation: shimmer 2.4s infinite;
+        background: #1c1c1e;
         display: flex;
         align-items: center;
         justify-content: center;
         border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        overflow: hidden;
       }
-      .proj-card__thumb svg {
-        width: 22px;
-        height: 22px;
-        opacity: 0.35;
+      .proj-card__thumb img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
       }
       .proj-card__body {
         padding: 10px 12px 12px;
@@ -369,6 +365,71 @@
         line-height: 1.4;
       }
 
+      /* ---------- SOCIAL TRAY (Overlapping & More Rectangular) ---------- */
+      .tray-wrapper {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        margin-top: 4px;
+      }
+
+      .social-tray {
+        display: flex;
+        align-items: center;
+        width: fit-content;
+      }
+
+      .social-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 76px; /* Dibuat lebih panjang (lebar) */
+        height: 56px;
+        border-radius: 14px;
+        margin-left: -16px; /* Disesuaikan agar tetap saling meniban */
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+        transition:
+          transform 0.25s ease,
+          z-index 0.25s ease; /* Sama seperti Card Project */
+        position: relative;
+        z-index: 1;
+      }
+      .social-btn:first-child {
+        margin-left: 0;
+      }
+
+      /* Animasi Hover sama seperti Chessy & Awas Imsak */
+      .social-btn:hover {
+        transform: translateY(-6px);
+        z-index: 10;
+      }
+
+      .social-btn svg {
+        width: 22px;
+        height: 22px;
+      }
+
+      /* Warna spesifik platform */
+      .social-btn--x {
+        background: #000000;
+        color: #ffffff;
+      }
+      .social-btn--ig {
+        background: linear-gradient(
+          135deg,
+          #feda75 0%,
+          #fa7e1e 35%,
+          #d62976 70%,
+          #962fbf 100%
+        );
+        color: #ffffff;
+      }
+      .social-btn--github {
+        background: #f2f2f5;
+        color: #000000;
+      }
+
       /* ---------- FOOTER ---------- */
       footer {
         text-align: center;
@@ -379,11 +440,68 @@
 
       @media (max-width: 480px) {
         .page {
-          padding: 32px 16px 32px;
+          padding: 24px 16px 24px;
         }
+
+        /* Mobile profile layout: stacked and centered like the reference */
+        .profile {
+          flex-direction: column;
+          align-items: center;
+          gap: 0;
+          margin-bottom: 30px;
+          text-align: center;
+        }
+
+        .profile__avatar {
+          width: 88px;
+          height: 88px;
+          border-radius: 14px; /* tetap kotak dengan sudut lembut */
+          margin-bottom: 18px;
+        }
+
+        .profile__info {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .profile__name-row {
+          flex-direction: column;
+          align-items: center;
+          gap: 8px;
+        }
+
+        .profile__name {
+          font-size: 28px;
+          line-height: 1.1;
+        }
+
+        .profile__handle {
+          font-size: 15px;
+          padding: 3px 10px;
+          border-radius: 999px;
+        }
+
+        .profile__bio {
+          width: 82%;
+          max-width: 240px;
+          margin-top: 16px;
+          font-size: 16px;
+          line-height: 1.5;
+          color: var(--text);
+        }
+
+        .profile__links {
+          justify-content: center;
+          margin-top: 12px;
+          gap: 10px;
+          font-size: 13px;
+        }
+
         .bubble {
           max-width: 86%;
-          font-size: 15.5px;
+          font-size: 15px;
         }
         .card-row {
           max-width: 100%;
@@ -395,50 +513,50 @@
           margin-left: -24px;
         }
 
-        .profile {
-          flex-direction: column;
-          align-items: center;
-          text-align: center;
-          gap: 0;
-          margin-bottom: 36px;
+        /* Responsif Ukuran Tombol Sosial Media */
+        .social-btn {
+          width: 64px;
+          height: 48px;
+          margin-left: -14px;
+          border-radius: 12px;
         }
-        .avatar {
-          width: 112px;
-          height: 112px;
-          margin-bottom: 20px;
+        .social-btn svg {
+          width: 18px;
+          height: 18px;
         }
-        .avatar svg {
-          width: 44px;
-          height: 44px;
+      }
+
+      @media (max-width: 380px) {
+        .profile__bio {
+          width: 86%;
+          max-width: 220px;
         }
-        .profile__info {
-          padding-top: 0;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-        }
-        .profile__name-row {
-          flex-direction: column;
-          gap: 10px;
+
+        .profile__avatar {
+          width: 78px;
+          height: 78px;
         }
         .profile__name {
           font-size: 24px;
         }
-        .profile__handle {
-          font-size: 15px;
-        }
         .profile__bio {
-          margin-top: 12px;
-          max-width: 280px;
-          text-align: center;
-          font-size: 16px;
-          line-height: 1.45;
-        }
-        .profile__links {
-          margin-top: 16px;
-          justify-content: center;
-          text-align: center;
           font-size: 15px;
+        }
+        .proj-card {
+          width: 120px;
+        }
+        .proj-card:not(:first-child) {
+          margin-left: -20px;
+        }
+        .social-btn {
+          width: 54px;
+          height: 40px;
+          margin-left: -12px;
+          border-radius: 10px;
+        }
+        .social-btn svg {
+          width: 14px;
+          height: 14px;
         }
       }
 
@@ -459,17 +577,10 @@
   </head>
   <body>
     <main class="page">
+      <!-- PROFILE -->
       <section class="profile">
-        <div class="avatar" aria-hidden="true">
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.5"
-          >
-            <circle cx="12" cy="8" r="4" />
-            <path d="M4 20c0-4.4 3.6-7 8-7s8 2.6 8 7" />
-          </svg>
+        <div class="profile__avatar">
+          <img src="picture.png" alt="Muhammad Dimas profile picture" />
         </div>
         <div class="profile__info">
           <div class="profile__name-row">
@@ -480,7 +591,11 @@
             Designing, building &amp; creating things since 2016
           </p>
           <div class="profile__links">
-            <a href="#" target="_blank" rel="noopener">
+            <a
+              href="https://awasimsak.vercel.app/"
+              target="_blank"
+              rel="noopener"
+            >
               <svg
                 viewBox="0 0 24 24"
                 fill="none"
@@ -493,7 +608,7 @@
               Awas Imsak!
             </a>
             <span class="dot">&middot;</span>
-            <a href="#" target="_blank" rel="noopener">
+            <a href="https://chessy.click" target="_blank" rel="noopener">
               <svg
                 viewBox="0 0 24 24"
                 fill="none"
@@ -511,6 +626,7 @@
         </div>
       </section>
 
+      <!-- CHAT THREAD -->
       <section class="thread" id="thread">
         <div class="msg msg--blue" data-typing="500">
           <div class="typing"><span></span><span></span><span></span></div>
@@ -567,25 +683,18 @@
           </div>
         </div>
 
+        <!-- PROJECT CARDS with images -->
         <div class="attach">
           <div class="card-row">
             <a
               class="proj-card"
-              href="#"
+              href="https://awasimsak.vercel.app/"
               target="_blank"
               rel="noopener"
               style="z-index: 1"
             >
               <div class="proj-card__thumb">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                >
-                  <rect x="3" y="3" width="18" height="18" rx="2" />
-                  <path d="M3 9h18M9 21V9" />
-                </svg>
+                <img src="awasimsak.png" alt="Awas Imsak! thumbnail" />
               </div>
               <div class="proj-card__body">
                 <div class="proj-card__title">Awas Imsak!</div>
@@ -596,23 +705,13 @@
             </a>
             <a
               class="proj-card"
-              href="#"
+              href="https://chessy.click"
               target="_blank"
               rel="noopener"
               style="z-index: 2"
             >
               <div class="proj-card__thumb">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                >
-                  <rect x="3" y="3" width="7" height="7" />
-                  <rect x="14" y="3" width="7" height="7" />
-                  <rect x="3" y="14" width="7" height="7" />
-                  <rect x="14" y="14" width="7" height="7" />
-                </svg>
+                <img src="chessy.png" alt="Chessy thumbnail" />
               </div>
               <div class="proj-card__body">
                 <div class="proj-card__title">Chessy</div>
@@ -629,82 +728,63 @@
           <div class="bubble" hidden>Are you on social media?</div>
         </div>
 
+        <!-- TEXT BUBBLE -->
         <div class="msg msg--out" data-typing="550">
           <div class="typing"><span></span><span></span><span></span></div>
           <div class="bubble" hidden>
             Yeah, though I don't post often! Here's a few links anyway.
-            <div class="icons">
-              <a
-                class="icon-badge"
-                href="#"
-                target="_blank"
-                rel="noopener"
-                aria-label="X"
+          </div>
+        </div>
+
+        <!-- SOCIAL TRAY (DIPISAHKAN DARI BUBBLE) -->
+        <div class="attach tray-wrapper">
+          <div class="social-tray">
+            <a
+              class="social-btn social-btn--x"
+              href="https://x.com/RIOTREVENGER"
+              target="_blank"
+              rel="noopener"
+              aria-label="X"
+            >
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                />
+              </svg>
+            </a>
+            <a
+              class="social-btn social-btn--ig"
+              href="https://instagram.com/riotrevenger"
+              target="_blank"
+              rel="noopener"
+              aria-label="Instagram"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
               >
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.8"
-                  stroke-linecap="round"
-                >
-                  <path d="M4 4l16 16M20 4L4 20" />
-                </svg>
-              </a>
-              <a
-                class="icon-badge"
-                href="#"
-                target="_blank"
-                rel="noopener"
-                aria-label="Instagram"
-              >
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.6"
-                >
-                  <rect x="3" y="3" width="18" height="18" rx="5" />
-                  <circle cx="12" cy="12" r="4" />
-                </svg>
-              </a>
-              <a
-                class="icon-badge"
-                href="#"
-                target="_blank"
-                rel="noopener"
-                aria-label="Behance"
-              >
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.6"
-                >
-                  <path
-                    d="M2 6h6a3 3 0 0 1 0 6H2zM2 12h7a3 3 0 0 1 0 6H2zM14 15a3.5 3.5 0 0 0 6.8 1M14.3 13h6.4a3.5 3.5 0 0 0-6.9-1.2"
-                  />
-                </svg>
-              </a>
-              <a
-                class="icon-badge"
-                href="#"
-                target="_blank"
-                rel="noopener"
-                aria-label="GitHub"
-              >
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.6"
-                >
-                  <path
-                    d="M8 20l1-3M16 20l-1-3M7 15l-2-2 2-2M17 15l2-2-2-2M10 17h4"
-                  />
-                </svg>
-              </a>
-            </div>
+                <rect x="3" y="3" width="18" height="18" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="18" cy="6" r="1.5" />
+              </svg>
+            </a>
+            <a
+              class="social-btn social-btn--github"
+              href="https://github.com/klawcodes"
+              target="_blank"
+              rel="noopener"
+              aria-label="GitHub"
+            >
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                />
+              </svg>
+            </a>
           </div>
         </div>
 
