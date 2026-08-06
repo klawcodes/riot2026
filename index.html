@@ -46,10 +46,10 @@
     <!-- Favicon -->
     <link
       rel="icon"
-      href="https://riotrevenger.xyz/picture.png"
+      href="https://riotrevenger.xyz/favicon.png"
       type="image/png"
     />
-    <link rel="apple-touch-icon" href="https://riotrevenger.xyz/picture.png" />
+    <link rel="apple-touch-icon" href="https://riotrevenger.xyz/favicon.png" />
 
     <!-- Structured Data (JSON-LD) untuk AI Overview & Search Engine -->
     <script type="application/ld+json">
@@ -138,11 +138,12 @@
         background: #1c1c1e;
         box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
       }
-      .profile__avatar img {
+      .profile__avatar video {
         display: block;
         width: 100%;
         height: 100%;
         object-fit: cover;
+        pointer-events: none;
       }
 
       .profile__info {
@@ -633,7 +634,17 @@
       <!-- PROFILE -->
       <section class="profile">
         <div class="profile__avatar">
-          <img src="picture.png" alt="Muhammad Dimas profile picture" />
+          <video
+            src="profile-picture.mp4"
+            autoplay
+            loop
+            muted
+            playsinline
+            disablepictureinpicture
+            controlslist="nodownload noplaybackrate nofullscreen"
+            oncontextmenu="return false;"
+            ondragstart="return false;"
+          ></video>
         </div>
         <div class="profile__info">
           <div class="profile__name-row">
